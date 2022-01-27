@@ -52,19 +52,17 @@ class Solution {
             fast=fast.next.next;
         }
         ListNode reverse=reverseNode(slow);
-        ListNode rerevNode=reverse;
         
         while(head!=null && reverse!=null)
         {
             if(head.val!=reverse.val)
             {
-                break;
+                return false;
             }
             head=head.next;
             reverse=reverse.next;
         }
-        reverseNode(rerevNode);
         
-        return head==null || reverse==null;
+        return true;
     }
 }
